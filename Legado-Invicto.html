@@ -55,11 +55,13 @@
             width:100%;
             display: block;
             transition: background-color 0.3s ease;
+            box-sizing: border-box;
         }
         button:hover {background-color:#b8860b; color:white;}
         .form-correo {margin-top:15px; padding:15px; background-color:#383838; border-radius:8px; border-left:3px solid #28a745;}
-        .form-correo form {display:flex; flex-direction:column; gap:10px;}
-        .form-correo label {margin-bottom:8px; font-weight:bold;}
+        .form-correo form {display:flex; flex-direction:column; gap:15px;}
+        .form-correo label {margin-bottom:0px; font-weight:bold;}
+        .form-correo button {margin:0;}
         input[type="email"] {
             width:100%; 
             padding:12px; 
@@ -68,6 +70,7 @@
             color:#000; 
             font-size:1rem;
             box-sizing:border-box;
+            margin:0;
         }
         input[type="email"]:focus {outline:none; border:2px solid #d4af37;}
         img {width:100%; max-width:400px; border-radius:8px; margin:10px auto; display:block;}
@@ -116,34 +119,34 @@
         <button onclick="hablarHombre('Boxeo. Origen: Antigua Grecia e Inglaterra. Objetivo: velocidad y buena defensa. Sirve para desarrollar reflejos y resistencia física.')">🎙️ Escuchar Boxeo</button>
 
         <h3>🦵 Muay Thai</h3>
-        
+         
         <p>✅ Origen: Tailandia.<br>✅ Objetivo: Uso experto de puños, pies, rodillas y codos.<br>✅ Sirve para: Fuerza total, condición física y defensa muy efectiva de pie.</p>
         <button onclick="hablarHombre('Muay Thai. Origen: Tailandia. Objetivo: usar todo el cuerpo para defenderse. Sirve para ganar fuerza y una defensa muy efectiva.')">🎙️ Escuchar Muay Thai</button>
 
         <h3>🥊 Kickboxing</h3>
-        
+         
         <p>✅ Origen: Estados Unidos y Japón, década de 1960.<br>✅ Objetivo: Combinar golpes de puño del boxeo con patadas altas y potentes.<br>✅ Sirve para: Mejorar coordinación, potencia, agilidad y defensa personal.</p>
         <button onclick="hablarHombre('Kickboxing. Origen: Estados Unidos y Japón. Objetivo: combinar puños y patadas potentes. Sirve para desarrollar mucha potencia, agilidad y defensa personal.')">🎙️ Escuchar Kickboxing</button>
 
         <h3>⚡ Kyusho Jitsu (Puntos de Presión)</h3>
-        
+         
         <p>✅ Origen: Antigua China y Okinawa.<br>✅ Objetivo: Conocer y aplicar presión en puntos sensibles del cuerpo para controlar al oponente con poco esfuerzo.<br>✅ Sirve para: Defensa muy efectiva y rápida.</p>
         <button onclick="hablarHombre('Kyusho Jitsu. Origen: Antigua China y Okinawa. Objetivo: usar puntos sensibles para defenderte con poca fuerza. Sirve para controlar situaciones difíciles y protegerte.')">🎙️ Escuchar Kyusho Jitsu</button>
 
         <h3>🤼 Sambo</h3>
-        
+         
         <p>✅ Origen: Rusia, siglo XX.<br>✅ Objetivo: Unir lucha efectiva, golpes y defensa militar para neutralizar al rival rápido.<br>✅ Sirve para: Autodefensa militar, competencia y saber defenderse bien.</p>
         <button onclick="hablarHombre('Sambo. Origen: Rusia. Objetivo: unir lucha y defensa militar. Sirve para defenderte muy bien de pie y en el suelo con técnicas muy efectivas.')">🎙️ Escuchar Sambo</button>
 
         <h3>🛡️ Krav Maga</h3>
-        
+         
         <p>✅ Origen: Israel, siglo XX.<br>✅ Objetivo: Defensa práctica, rápida y sin reglas para sobrevivir y neutralizar cualquier ataque en la calle.<br>✅ Sirve para: Sentirte seguro en cualquier situación.</p>
-        <button onclick="hablarHombre('Krav Maga. Origen: Israel. Objetivo: defensa práctica y rápida para sobrevivir en la calle. Sirve para sentirte seguro y proteger a los tuyos ante cualquier peligro.')">🎙️ Escuchar Krav Maga</button>
+        <button onclick="hablarHombre('Krav Maga. Origen: Israel. Objetivo: defensa práctica y rápida para sobrevivir en la calle. Sirve para sentirte seguro y proteger a los tuyos ante cualquier ataque.')">🎙️ Escuchar Krav Maga</button>
     </div>
 
     <div class="caja">
         <h2>🛡️ DEFENSA PERSONAL — $50</h2>
-        
+         
         <p>✅ Técnicas sencillas, seguras y muy efectivas.<br>✅ Para sentirte tranquilo y seguro en cualquier lugar.<br>✅ Para todas las edades y ambos géneros.<br>✅ Protege tu bienestar y el de tu familia.</p>
         <button onclick="hablarMujer('Defensa Personal cuesta cincuenta pesos por sesión. Aprende técnicas sencillas y seguras para protegerte y proteger a tu familia.')">🔊 Escuchar Defensa Personal</button>
     </div>
@@ -157,7 +160,7 @@
 
     <div class="caja">
         <h2>💪 CALISTENIA</h2>
-       
+        
         <p>✅ Ejercicios usando tu propio peso corporal.<br>✅ Desarrolla fuerza, agilidad y salud sin máquinas.<br>✅ Puedes entrenar donde tú quieras.<br>✅ Para todas las edades.</p>
         <button onclick="hablarMujer('Calistenia: ejercicios usando tu propio peso. Desarrollas fuerza y salud sin necesidad de máquinas, donde tú quieras.')">🔊 Escuchar Calistenia</button>
     </div>
@@ -170,12 +173,12 @@
             <tr><td>Sábado</td><td>8:00 AM – 12:00 PM</td><td>6:00 PM – 8:00 PM</td></tr>
         </table>
         <p class="aviso-hora">✅ Dentro de estos horarios, tú eliges la hora que más te convenga</p>
-        <button onclick="hablarMujer('Horarios: De lunes a viernes por la mañana de ocho a doce, y por la tarde de seis a diez. Los sábados de ocho a doce y de seis a ocho de la noche. Tú escoges tu horario.')">🔊 Escuchar Horarios</button>
+        <button onclick="hablarMujer('Horarios: De lunes a viernes por la mañana de ocho a doce, y por la tarde de seis a diez. Los sábados de ocho a doce y de seis a ocho de la noche. Tú escoges la hora que te convenga.')">🔊 Escuchar Horarios</button>
     </div>
 
     <div class="caja">
         <h2>💃 BAILES Y FIESTAS DE 15 AÑOS</h2>
-        
+         
         <p>Coreografías hermosas para quinceañeras y chambelanes.<br>🎤 Contamos con animador profesional para alegrar tu fiesta.<br>💲 Precio del Animador: <span class="precio">$3,000</span><br>Hacemos que tu evento sea inolvidable.</p>
         <button onclick="hablarMujer('Hacemos coreografías hermosas para tus quince años. El animador cuesta tres mil pesos. Tenemos el paquete completo para que tu fiesta sea perfecta.')">🔊 Escuchar Fiestas de 15</button>
     </div>
