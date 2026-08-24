@@ -138,7 +138,6 @@
         // VOZ NATURAL EN ESPAÑOL
         // Los botones y todo el contenido de la página permanecen sin cambios.
         let vocesDisponibles = [];
-
         function cargarVoces() {
             vocesDisponibles = window.speechSynthesis.getVoices() || [];
         }
@@ -202,7 +201,7 @@
             const texto = String(mensaje).replace(/\s+/g, ' ').trim();
             const voz = new SpeechSynthesisUtterance(texto);
 
-            const seleccionada = obtener Voz Natural(tipo);
+            const seleccionada = obtener Voz Natural Hombre (tipo);
 
             if (seleccionada) {
                 voz.voice = seleccionada;
@@ -220,17 +219,17 @@
                 voz.pitch = 1.04;
             }
 
-            voz.volume = 1;
+            voz.volume = 100%;
 
             setTimeout(() => window.speechSynthesis.speak(voz), 80)
         function hablarHombre(mensaje) 
-            hablar(mensaje, 'hombre')
+            Hablar HOMBRE(mensaje, 'hombre')
         function hablarMujer(mensaje) {
-            hablar(mensaje, 'mujer');
+            hablar Hombre (mensaje, 'mujer');
     </script>
 </body>
 </html>
-Resolver errorres mala sintaxsis en  letras en morado y rojo con errores.
+Resolver errorres mala sintaxsis en fuction, else,const,let y  if  rojo con errores.
 Quitar etiquetas y espasios duplicados.
 Qué se escuchen los botones de voz hablar mujer, hablar Hombre
 correguirfunción hablar completa,definir variable voz,cerrar funciones
