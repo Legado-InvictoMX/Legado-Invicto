@@ -8,6 +8,34 @@
         * {margin:0; padding:0; box-sizing:border-box;}
         body {background-color:#1a1a1a; color:#f8f8f8; font-family:Arial, sans-serif; line-height:1.8; font-size:1.05rem;}
         header {text-align:center; padding:25px; border-bottom:2px solid #d4af37; margin-bottom:20px;}
+        
+        /* ===== LOGO — SE VE QUE SE PUEDE TOCAR ===== */
+        .logo-principal {
+            max-width:300px; 
+            margin:0 auto 15px auto; 
+            cursor:pointer; 
+            transition:all 0.3s ease;
+            position:relative;
+        }
+        .logo-principal:hover {
+            transform:scale(1.05);
+            filter:brightness(1.15);
+        }
+        .logo-principal img {width:100%; height:auto; border-radius:12px;}
+        
+        /* Texto debajo del logo indicando que se toca */
+        .texto-tocar-logo {
+            color:#f9d71c;
+            font-size:0.9rem;
+            margin-top:8px;
+            font-weight:bold;
+            animation:parpadear 2s infinite;
+        }
+        @keyframes parpadear {
+            0%, 100% {opacity:1;}
+            50% {opacity:0.5;}
+        }
+        
         h1 {color:#d4af37; font-size:2.3rem; margin-bottom:10px;}
         .caja {background-color:#2b2b2b; border-radius:12px; padding:20px; margin:20px;}
         h2 {color:#f9d71c; margin-bottom:15px; font-size:1.4rem;}
@@ -15,7 +43,6 @@
         .precio {color:#2ecc71; font-weight:bold; font-size:1.15rem;}
         .edades {background-color:#383838; border-left:3px solid #f9d71c; padding:12px; margin:15px 0; border-radius:6px; text-align:center;}
         
-        /* ===== NÚMERO CON WHATSAPP ===== */
         .telefono {background-color:#2c3e50; border-left:3px solid #2ecc71; padding:15px; margin:20px; border-radius:8px; text-align:center; font-size:1.1rem; font-weight:bold; color:#2ecc71;}
         .telefono a {color:inherit; text-decoration:none;}
         .telefono a:hover {text-decoration:underline;}
@@ -26,11 +53,8 @@
         .aviso-hora {color:#f9d71c; font-weight:bold; text-align:center; margin-top:10px; font-size:1.1rem;}
         button {background-color:#d4af37; color:black; border:none; padding:14px 20px; border-radius:8px; font-weight:bold; margin:10px 0; cursor:pointer; font-size:1.05rem; width:100%;}
         button:hover {background-color:#b8860b; color:white;}
-        .form-correo {margin-top:15px; padding:15px; background-color:#383838; border-radius:8px; border-left:3px solid #28a745;}
-        input[type="email"] {width:85%; padding:12px; margin:10px 0; border-radius:6px; border:1px solid #ccc; color:#000; font-size:1rem;}
         img {width:100%; max-width:400px; border-radius:8px; margin:10px auto; display:block;}
         
-        /* ===== BOTÓN WHATSAPP ESTILO OFICIAL ===== */
         .boton-whatsapp {
             display:inline-flex;
             align-items:center;
@@ -58,10 +82,15 @@
 <body>
 
     <header>
+        <!-- 📌 LOGO — SE VE Y SE SABE QUE SE TOCA 📌 -->
+        <div class="logo-principal" onclick="hablarMujer('Quién como Dios, nadie como Dios.')" title="👉 Toca la imagen para escuchar el mensaje">
+            <img src="https://i.imgur.com/EVotLoz.jpeg" alt="Logo Legado Invicto">
+        </div>
+        <p class="texto-tocar-logo">👆 Toca la imagen de arriba para escuchar mensaje</p>
+        
         <h1>LEGADO INVICTO</h1>
         <p>Artes Marciales • Defensa Personal • Body Combat • Calistenia • Eventos • Banquetes</p>
         
-        <!-- ✅ NÚMERO IGUAL QUE ABRE WHATSAPP -->
         <div class="telefono">
             📞 Contáctanos: 
             <a href="https://wa.me/525657589039?text=Hola,%20vi%20tu%20página%20de%20Legado%20Invicto%20y%20quisiera%20pedir%20informes" target="_blank">
@@ -69,7 +98,6 @@
             </a>
         </div>
         
-        <!-- ✅ BOTÓN NUEVO — ARTES MARCIALES -->
         <a href="https://wa.me/525657589039?text=Hola,%20me%20interesa%20informes%20sobre%20Artes%20Marciales%20y%20clases%20-%20Legado%20Invicto" target="_blank" class="boton-whatsapp">
             <span class="icono-whatsapp">💬</span>
             Informes de Artes Marciales
@@ -81,12 +109,14 @@
 
     <div class="caja">
         <h2>🥋 MMA — ARTES MARCIALES MIXTAS — $25 clase</h2>
+         <img src="https://i.imgur.com/Tbu3X1L.jpeg" alt="MMA">
         <p><strong>Origen:</strong> Brasil y Estados Unidos, estilo Vale Tudo.<br>
         <strong>Objetivo:</strong> Formarte completo, fuerte, disciplinado y capaz de defenderte en cualquier situación.<br>
         <strong>Sirve para:</strong> Mejorar salud, fuerza, resistencia, seguridad y confianza personal y familiar.</p>
         <button onclick="hablarHombre('Origen: Brasil y Estados Unidos. Objetivo: formarte completo, fuerte y capaz de defenderte. Sirve para mejorar tu salud, fuerza y seguridad para ti y tu familia.')">🎙️ Escuchar Origen y Objetivo</button>
 
         <h3>🥋 Karate</h3>
+        <img src="" alt="Karate">
         <p>✅ Origen: Islas Ryukyu, Japón.<br>✅ Objetivo: Carácter, respeto, disciplina y golpes precisos.<br>✅ Sirve para: Defensa personal, equilibrio mental y formación de valores.</p>
         <button onclick="hablarHombre('Karate. Origen: Islas Ryukyu, Japón. Objetivo: carácter, respeto y disciplina. Sirve para defensa personal y formación de valores.')">🎙️ Escuchar Karate</button>
 
@@ -96,41 +126,48 @@
         <button onclick="hablarHombre('Boxeo. Origen: Antigua Grecia e Inglaterra. Objetivo: velocidad y buena defensa. Sirve para desarrollar reflejos y resistencia física.')">🎙️ Escuchar Boxeo</button>
 
         <h3>🦵 Muay Thai</h3>
+        <img src="https://i.imgur.com/1iPRPBb.jpeg" alt="Muay Thai">
         <p>✅ Origen: Tailandia.<br>✅ Objetivo: Uso experto de puños, pies, rodillas y codos.<br>✅ Sirve para: Fuerza total, condición física y defensa muy efectiva de pie.</p>
         <button onclick="hablarHombre('Muay Thai. Origen: Tailandia. Objetivo: usar todo el cuerpo para defenderse. Sirve para ganar fuerza y una defensa muy efectiva.')">🎙️ Escuchar Muay Thai</button>
 
         <h3>🥊 Kickboxing</h3>
+        <img src="" alt="Kickboxing">
         <p>✅ Origen: Estados Unidos y Japón, década de 1960.<br>✅ Objetivo: Combinar golpes de puño del boxeo con patadas altas y potentes.<br>✅ Sirve para: Mejorar coordinación, potencia, agilidad y defensa completa de pie.</p>
         <button onclick="hablarHombre('Kickboxing. Origen: Estados Unidos y Japón. Objetivo: combinar puños y patadas potentes. Sirve para desarrollar mucha potencia, agilidad y defensa personal.')">🎙️ Escuchar Kickboxing</button>
 
         <h3>⚡ Kyusho Jitsu (Puntos de Presión)</h3>
+        <img src="" alt="Kyusho Jitsu">
         <p>✅ Origen: Antigua China y Okinawa.<br>✅ Objetivo: Conocer y aplicar presión en puntos sensibles del cuerpo para controlar al oponente con poco esfuerzo.<br>✅ Sirve para: Defensa muy eficaz, controlar agresores y protegerte sin necesidad de usar mucha fuerza.</p>
         <button onclick="hablarHombre('Kyusho Jitsu. Origen: Antigua China y Okinawa. Objetivo: usar puntos sensibles para defenderte con poca fuerza. Sirve para controlar situaciones difíciles y protegerte eficazmente.')">🎙️ Escuchar Kyusho</button>
 
         <h3>🤼 Sambo</h3>
+        <img src="" alt="Sambo">
         <p>✅ Origen: Rusia, siglo XX.<br>✅ Objetivo: Unir lucha efectiva, golpes y defensa militar para neutralizar al rival rápido.<br>✅ Sirve para: Autodefensa militar, competencia y saber defenderte tanto de pie como en el suelo.</p>
         <button onclick="hablarHombre('Sambo. Origen: Rusia. Objetivo: unir lucha y defensa militar. Sirve para defenderte muy bien de pie y en el suelo con técnicas muy efectivas.')">🎙️ Escuchar Sambo</button>
 
         <h3>🛡️ Krav Maga</h3>
+        <img src="https://i.imgur.com/RLUuCJ0.jpeg" alt="Krav Maga">
         <p>✅ Origen: Israel, siglo XX.<br>✅ Objetivo: Defensa práctica, rápida y sin reglas para sobrevivir y neutralizar cualquier ataque en la calle.<br>✅ Sirve para: Sentirte seguro en cualquier lugar, saber reaccionar ante peligros y proteger a tu familia.</p>
         <button onclick="hablarHombre('Krav Maga. Origen: Israel. Objetivo: defensa práctica y rápida para sobrevivir en la calle. Sirve para sentirte seguro y proteger a los tuyos ante cualquier peligro.')">🎙️ Escuchar Krav Maga</button>
     </div>
 
     <div class="caja">
         <h2>🛡️ DEFENSA PERSONAL — $50</h2>
+        <img src="" alt="Defensa Personal">
         <p>✅ Técnicas sencillas, seguras y muy efectivas.<br>✅ Para sentirte tranquilo y seguro en cualquier lugar.<br>✅ Para todas las edades y ambos géneros.<br>✅ Protege tu bienestar y el de tu familia.</p>
         <button onclick="hablarMujer('Defensa Personal cuesta cincuenta pesos por sesión. Aprende técnicas sencillas y seguras para protegerte y proteger a tu familia.')">🔊 Escuchar Defensa Personal</button>
     </div>
 
     <div class="caja">
         <h2>🔥 BODY COMBAT</h2>
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Defensa Personal">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Body Combat">
         <p>✅ Entrenamiento dinámico inspirado en artes marciales.<br>✅ Quema grasa, mejora resistencia y libera estrés.<br>✅ Energía y salud para todo el cuerpo.<br>✅ Para todas las edades.</p>
         <button onclick="hablarMujer('Body Combat: entrenamiento fuerte y divertido. Quema grasa, mejora tu resistencia y te ayuda a liberar el estrés.')">🔊 Escuchar Body Combat</button>
     </div>
 
     <div class="caja">
         <h2>💪 CALISTENIA</h2>
+        <img src="" alt="Calistenia">
         <p>✅ Ejercicios usando tu propio peso corporal.<br>✅ Desarrolla fuerza, agilidad y salud sin máquinas.<br>✅ Puedes entrenar donde tú quieras.<br>✅ Para todas las edades.</p>
         <button onclick="hablarMujer('Calistenia: ejercicios usando tu propio peso. Desarrollas fuerza y salud sin necesidad de máquinas, donde tú quieras.')">🔊 Escuchar Calistenia</button>
     </div>
@@ -148,9 +185,9 @@
 
     <div class="caja">
         <h2>💃 BAILES Y FIESTAS DE 15 AÑOS</h2>
+        <img src="https://i.imgur.com/rZfPdh6.jpeg" alt="Bailes y Quince Años">
         <p>Coreografías hermosas para quinceañeras y chambelanes.<br>🎤 Contamos con animador profesional para alegrar tu fiesta.<br>💲 Precio del Animador: <span class="precio">$3,000</span><br>🎁 Paquete Coreografía + Animador: Consultar</p>
         
-        <!-- ✅ BOTÓN WHATSAPP 15 AÑOS -->
         <a href="https://wa.me/525657589039?text=Hola,%20me%20interesa%20informes%20para%20mis%20quince%20años%20-%20Legado%20Invicto" target="_blank" class="boton-whatsapp">
             <span class="icono-whatsapp">💬</span>
             Solicitar Informes por WhatsApp
@@ -161,10 +198,11 @@
 
     <div class="caja">
         <h2>🍖 BANQUETES Y COMIDA TRADICIONAL</h2>
-        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Comida tradicional mexicana">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Comida tradicional mexicana - Pizza">
+        <img src="https://i.imgur.com/Rlq9lcC.jpeg" alt="Tacos tradicionales mexicanos">
+        
         <p>Carnitas, Barbacoa, Tacos de Suadero, Al Pastor y más.<br>Para fiestas, escuelas, reuniones, convivios de maestros y servidores públicos, despedidas de sexto de primaria.<br>Preparamos el platillo que usted guste.</p>
         
-        <!-- ✅ BOTÓN WHATSAPP BANQUETES -->
         <a href="https://wa.me/525657589039?text=Hola,%20me%20interesa%20informes%20sobre%20Banquetes%20y%20Comida%20Tradicional%20-%20Legado%20Invicto" target="_blank" class="boton-whatsapp">
             <span class="icono-whatsapp">💬</span>
             Solicitar Informes de Comida por WhatsApp
